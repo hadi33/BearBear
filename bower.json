@@ -1,0 +1,26 @@
+{
+  "name": "bearBear",
+  "description": "bearBear by HadiZheng",
+  "main": "server.js",
+  "authors": [
+    "hadi33 <zhqx_33@163.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "express"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "*",
+    "bootstrap": "*",
+    "bootstrap-validator": "^0.10.2"
+  }
+}

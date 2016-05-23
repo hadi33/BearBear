@@ -1,0 +1,50 @@
+{
+  "name": "BearBear",
+  "main": "app.js",
+  "authors": [
+    "hadi33 <zhqx_33@163.com>"
+  ],
+  "description": "BearBear by HadiZheng",
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "animate.css": "*",
+    "angular": ">=1.4.0",
+    "bootstrap-progressbar": "^0.9.0",
+    "bootstrap-validator": "^0.10.2",
+    "angular-bootstrap": "*",
+    "bootstrap": "*",
+    "datatables.net-bs": ">=1.10.9",
+    "Chart.js": "^2.1.0",
+    "angular-route": "*",
+    "datatables.net-buttons-bs": "^1.1.2",
+    "datatables.net-fixedheader-bs": "^3.1.1",
+    "datatables.net-keytable": "^2.1.1",
+    "datatables.net-responsive": "^2.0.2",
+    "datatables.net-responsive-bs": "^2.0.2",
+    "datatables.net-scroller-dt": "^1.4.1",
+    "datatables.net-scroller-bs": "^1.4.1",
+    "fastclick": "^1.0.6",
+    "Flot": "flot#^0.8.3",
+    "datatables": "^1.10.11",
+    "font-awesome": "*",
+    "iCheck": "icheck#^1.0.2",
+    "ngstorage": "*",
+    "nprogress": "^0.2.0",
+    "jszip": "^3.0.0",
+    "skycons": "*",
+    "pdfmake": "^0.1.20",
+    "angular-ui-router": "^0.3.0"
+  }
+}

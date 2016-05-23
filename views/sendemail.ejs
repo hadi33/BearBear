@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BearBear</title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom Theme Scripts -->
+</head>
+
+<body style="background:#F7F7F7;">
+<div>
+    <div id="wrapper">
+        <div id="login" class="form">
+            <section class="login_content">
+                <form name="resForm" method="post" data-toggle="validator" role="form">
+                    <h1>找回密码</h1>
+                    <% if(locals.error) { %>
+                    <div class="alert alert-danger-s"><%= error %></div>
+                    <% } %>
+                    <% if(locals.success) { %>
+                    <div class="alert alert-success-s"><%= success %></div>
+                    <% } %>
+                    <div class="has-feedback">
+                        <input type="email" name="email" class="form-control" placeholder="Email"
+                               value= "<%= email %>"
+                               required=""/>
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary ">发送</button>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="separator">
+
+                        <p class="change_link">已经有账号 ?
+                            <a href="/login"> 登陆 </a>
+                        </p>
+                        <div class="clearfix"></div>
+                        <br/>
+                        <div>
+                            <h1><i class="fa fa-paw" style="font-size: 26px;"></i> BearBear!</h1>
+                            <p>©2016 All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </form>
+
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+<!-- jQuery -->
+<script src="libs/jquery/dist/jquery.min.js"></script>
+<script src="libs/bootstrap-validator/dist/validator.min.js"></script>
+</html>
