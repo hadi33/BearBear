@@ -6,9 +6,16 @@
     angular.module('app')
         .controller('CompanyController', controller);
 
-    function controller(DataService) {
+    function controller(DTOptionsBuilder,DataService) {
+        var vm = this;
+
+        // DataTables configurable options
+        // vm.dtOptions = DTOptionsBuilder.newOptions()
+        //     .withDisplayLength(10)
+        //     .withOption('bLengthChange', false);
+
         // get company data
-         var vm = this;
+
          vm.companys = null;
         DataService.getCompany()
             .then(function (doc) {
