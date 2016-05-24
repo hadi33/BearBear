@@ -15,11 +15,12 @@
         //     .withOption('bLengthChange', false);
 
         // get company data
-
+        usSpinnerService.spin('spinner-1');
          vm.companys = null;
         DataService.getCompany()
             .then(function (doc) {
                 vm.companys = doc;
+                usSpinnerService.stop('spinner-1');
             });
     }
 
