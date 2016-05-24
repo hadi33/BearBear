@@ -6,7 +6,7 @@
     angular.module('app')
         .controller('CompanyController', controller);
 
-    function controller(DTOptionsBuilder,DataService) {
+    function controller(usSpinnerService,DTOptionsBuilder,DataService) {
         var vm = this;
 
         // DataTables configurable options

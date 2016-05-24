@@ -48,7 +48,7 @@
                         <img src="{{user.picture}}" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
+                        <span>欢迎回来,</span>
                         <h2 ng-bind="user.username"></h2>
                     </div>
                 </div>
@@ -226,14 +226,14 @@
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;">个人信息</a>
+                                <li><a href="#/profile">个人信息</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
+                                <!--<li>-->
+                                    <!--<a href="javascript:;">-->
+                                        <!--<span class="badge bg-red pull-right">50%</span>-->
+                                        <!--<span>Settings</span>-->
+                                    <!--</a>-->
+                                <!--</li>-->
                                 <li>
                                     <a href="javascript:;">帮助</a>
                                 </li>
@@ -409,6 +409,7 @@
 <script src="controllers/ProfitCenterCtrl.js"></script>
 <script src="controllers/VenderCtrl.js"></script>
 <script src="controllers/CustomerCtrl.js"></script>
+<script src="controllers/ProfileCtrl.js"></script>
 
 <!-- Flot -->
 <script>

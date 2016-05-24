@@ -60,6 +60,14 @@
                 controller: 'CostCenterController',
                 controllerAs: 'vm'
             })
+
+            .state('profile', {
+            url: '/profile',
+            templateUrl: 'views/profile.html',
+            controller: 'ProfileController',
+            controllerAs: 'vm'
+
+        })
         ;
 
         // $locationProvider.html5Mode(
