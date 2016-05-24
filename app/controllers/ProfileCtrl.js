@@ -5,7 +5,7 @@
 (function () {
     'use strict';
     angular.module('app')
-        .controller('AccountController', controller);
+        .controller('ProfileController', controller);
     function controller($scope, $location, $rootScope, $window) {
 
     }
