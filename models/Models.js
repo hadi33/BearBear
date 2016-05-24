@@ -4,6 +4,9 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
+var models ={};
+
+
 var userSchema = mongoose.Schema({
     username:String,
     password:String,
@@ -15,9 +18,34 @@ var userSchema = mongoose.Schema({
 
 userSchema.methods.generateHash =function (password) {
     return bcrypt.hashSync(password,bcrypt.genSaltSync(8),null);
-}
+};
+
 userSchema.methods.validPassword=function (password) {
     return bcrypt.compareSync(password,this.password);
-}
+};
 
-module.exports=mongoose.model('User',userSchema);
+var companySchema = mongoose.Schema({
+    comcode: String,
+    name: String,
+    city: String,
+    country: String,
+    currency: String
+});
+
+
+var profitcenter = mongoose.Schema({
+    profit_center: String,
+    comcode: String,
+    text: String,
+    profit_group: String,
+    lock: String
+});
+
+
+
+models.user = mongoose.model('user',userSchema);
+models.company = mongoose.model('company',companySchema);
+models.profitcenter = mongoose.model('profitcenter',profitcenter);
+
+module.exports= models;
+// module.exports=mongoose.model('moModels',moModels);

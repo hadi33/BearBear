@@ -48,6 +48,8 @@ $(document).ready(function() {
 
 
             $SIDEBAR_MENU.find("li").removeClass('active');
+            //add by hadi ,remove current-page
+            $SIDEBAR_MENU.find("li").removeClass('current-page');
             $li.addClass('active');
 
             $('ul:first', $li).slideDown(function() {

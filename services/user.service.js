@@ -5,8 +5,9 @@ var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt-nodejs');
 var Q = require('q');
-var User = require('models/User');
+var models = require('models/Models');
 
+var User = models.user;
 var service = {};
 mongoose.connect(database.url);
 

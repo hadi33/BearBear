@@ -13,6 +13,7 @@
         var service = {};
         service.getCompany = GetCompany;
         service.getVender  = GetVender;
+        service.getProfitCenter  = getProfitCenter;
 
         return service;
 
@@ -22,6 +23,10 @@
 
         function GetVender() {
             //return $http.get('/api/business/getCompany').then(handleSuccess, handleError);
+        }
+
+        function getProfitCenter() {
+            return $http.get('/api/business/getProfitCenter').then(handleSuccess, handleError);
         }
 
         // private functions

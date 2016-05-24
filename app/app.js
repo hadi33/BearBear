@@ -5,7 +5,7 @@
     'use strict';
 
     angular
-        .module('app', ['ui.router'])
+        .module('app', ['ui.router','datatables','angularSpinner'])
         .config(config)
         .run(run);
 
