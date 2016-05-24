@@ -13,7 +13,7 @@ var express = require('express'),
     nodemailer = require('nodemailer'),
     port = process.env.PORT || 3000;
 
-// configuration
+// configuration hadi
 
 app.set('view engine','ejs');
 app.set('views',__dirname+'/views');
