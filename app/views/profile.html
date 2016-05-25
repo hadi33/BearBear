@@ -268,7 +268,15 @@
                                         <div class="x_content">
 
                                             <!-- start form for validation -->
-                                            <form id="demo-form" class="form-horizontal form-label-left">
+                                            <form class="form-horizontal form-label-left" novalidate>
+                                                <div class="item form-group">
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                        <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
+                                                    </div>
+                                                </div>
+
                                                 <div class="form-group">
                                                     <label for="password">旧密码 :</label>
 
@@ -285,7 +293,9 @@
                                                            name="newpassword" data-parsley-trigger="change" required/>
                                                     <br>
 
-                                                    <span class="btn btn-primary">修改</span>
+                                                    <button type="submit" class="btn btn-primary">修改</button>
+
+                                                    <!--<span class="btn btn-primary">span>-->
                                                 <span>
                                                     <a href="/sendemail">忘记密码？</a>
                                                 </span>
