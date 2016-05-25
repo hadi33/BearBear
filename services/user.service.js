@@ -1,6 +1,5 @@
 var config = require('config/runconfig');
 var mongoose = require('mongoose');
-var database = require('config/db');
 var _ = require('lodash');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt-nodejs');
@@ -9,7 +8,6 @@ var models = require('models/Models');
 
 var User = models.user;
 var service = {};
-mongoose.connect(database.url);
 
 service.authenticate = authenticate;
 service.getById = getById;
@@ -27,11 +25,14 @@ function authenticate(username, password) {
     username = username.toLowerCase();  // conver to low case
     if (username.indexOf('@') !== -1) {
         User.findOne({email: username}, function (err, user) {
-            if (err) deferred.reject(err);
+            if (err) {
+                deferred.reject(err);
+            }
 
             if (user && bcrypt.compareSync(password, user.password)) {
                 // authentication successful
-                deferred.resolve(jwt.sign({sub:user._id},config.secret));
+                database.disconnect();
+                deferred.resolve(jwt.sign({sub: user._id}, config.secret));
             } else {
                 // authentication failed
                 deferred.resolve();
@@ -39,11 +40,13 @@ function authenticate(username, password) {
         });
     } else {
         User.findOne({username: username}, function (err, user) {
-            if (err) deferred.reject(err);
+            if (err) {
+                deferred.reject(err);
+            }
 
             if (user && bcrypt.compareSync(password, user.password)) {
                 // authentication successful
-                deferred.resolve(jwt.sign({sub:user._id},config.secret));
+                deferred.resolve(jwt.sign({sub: user._id}, config.secret));
             } else {
                 // authentication failed
                 deferred.resolve();
@@ -51,13 +54,14 @@ function authenticate(username, password) {
         });
     }
 
+
     return deferred.promise;
 }
 
 function getById(_id) {
     var deferred = Q.defer();
 
-    User.findById(_id,'username email', function (err, user) {
+    User.findById(_id, 'username email', function (err, user) {
         if (err) deferred.reject(err);
 
         if (user) {
@@ -95,21 +99,21 @@ function getByEmail(email) {
 function createVerificationToken(email) {
     var deferred = Q.defer();
     email = email.toLowerCase(); // convert to lower case
-    User.findOne({email:email},
-        function (err,doc) {
-            if(err) deferred.reject(err);
+    User.findOne({email: email},
+        function (err, doc) {
+            if (err) deferred.reject(err);
 
-            if(doc){
+            if (doc) {
                 // use timestamp and user email to generate virification token
                 var timestamp = new Date().getTime();
-                doc.verificationToken = jwt.sign(doc.email+timestamp, config.secret);
+                doc.verificationToken = jwt.sign(doc.email + timestamp, config.secret);
                 doc.save();
                 deferred.resolve(doc.verificationToken)
-            }else{
-                deferred.reject('找不到email:'+email);
+            } else {
+                deferred.reject('找不到email:' + email);
             }
 
-    });
+        });
     return deferred.promise;
 }
 

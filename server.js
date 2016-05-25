@@ -11,6 +11,7 @@ var express = require('express'),
     session = require('express-session'),
     expressJwt = require('express-jwt'),
     nodemailer = require('nodemailer'),
+    database = require('config/db')
     port = process.env.PORT || 3000;
 
 // configuration hadi
@@ -51,6 +52,8 @@ app.use('/api',
 //logs
 app.use(morgan('dev'));
 
+//
+database.connectDB();
 
 //routes
 app.use('/login',require('./controllers/login.controller'));
